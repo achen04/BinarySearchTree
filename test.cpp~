@@ -1,0 +1,37 @@
+#include <iostream>
+#include "BinarySearchTree.h"
+
+
+
+
+using namespace std;
+
+void print_tree_details(BinarySearchTree &bst) {
+  
+	bst.print_tree();
+        cout << "\n";
+        cout << "min: " << bst.find_min() << "\n";
+        cout << "max: " << bst.find_max() << "\n";
+        cout << "nodes: " << bst.node_count() << "\n";
+        cout << "count total: " << bst.count_total() << "\n";	
+        cout << "tree height: " << bst.tree_height() << "\n";
+        cout << "\n";
+	
+}
+
+
+int main() {
+        int rand_ints[12]={5,3,6,11,-5,-2,15,4,4,9,14,8};
+
+        BinarySearchTree bst;
+        for (int i=0;i<12;i++) {
+                cout << "Inserting " << rand_ints[i] << "\n";
+                bst.insert(rand_ints[i]);                    
+        }                                                    
+        bst.print_tree();                                    
+        cout << "Removing 8.\n";                             
+        bst.remove(8);                                       
+        bst.print_tree();                                    
+
+        return 0;
+}                 
